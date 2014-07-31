@@ -1,0 +1,9 @@
+header {
+	margin-bottom: 20px;
+	padding: 20px 0;
+	border-bottom: 54px solid #6699cc;
+}
+header img {
+	display: block;
+	margin: auto;
+}

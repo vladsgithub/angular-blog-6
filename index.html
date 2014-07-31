@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="angularApp">
+<head>
+	<meta charset="utf-8">
+	<title>Angular-blog</title>
+
+	<link rel="stylesheet" href="ui/css/bootstrap.min.css">
+	<link rel="stylesheet" href="ui/css/common.css">
+
+	<script src="ui/js/bootstrap.min.js"></script>
+	<script src="ui/js/angular.min.js"></script>
+	<script src="ui/js/app.js"></script>
+
+</head>
+<body>
+
+<header>
+	<img src="ui/img/logo.png" alt />
+</header>
+<div class="container" ng-controller="ArticleController as blog">
+
+	<article ng-repeat="article in blog.articles">
+		<img class="img" src="ui/pic/{{article.pic}}.jpg" alt />
+
+		<h2 class="title">{{article.title}}</h2>
+
+		<h4 class="author">{{article.author}}</h4>
+
+		<p class="article">{{article.text}}</p>
+	</article>
+
+</div>
+
+</body>
+</html>
