@@ -2,7 +2,6 @@
 	var app = angular.module('angularApp', []);
 
 	app.controller('ArticleController', function(){
-		this.name = "Vlad";
 		this.articles = articles;
 	});
 
@@ -28,3 +27,27 @@
 	];
 })();
 
+$(document).ready(function(){
+	$("#newPost").click(function(){
+		bootbox.dialog({
+			message: $("#formNewPost").html(),
+			title: "New post",
+			buttons: {
+				cancel: {
+					label: "Cancel",
+					className: "btn-default",
+					callback: function() {
+						bootbox.hideAll();
+					}
+				},
+				add: {
+					label: "Add this new post",
+					className: "btn-primary",
+					callback: function() {
+						alert("great success");
+					}
+				}
+			}
+		});
+	});
+});

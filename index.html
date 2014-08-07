@@ -7,28 +7,44 @@
 	<link rel="stylesheet" href="ui/css/bootstrap.min.css">
 	<link rel="stylesheet" href="ui/css/common.css">
 
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="ui/js/bootstrap.min.js"></script>
+	<script src="ui/js/bootbox.min.js"></script>
 	<script src="ui/js/angular.min.js"></script>
 	<script src="ui/js/app.js"></script>
 
 </head>
-<body>
+<body ng-cloak>
 
 <header>
 	<img src="ui/img/logo.png" alt />
 </header>
 <div class="container" ng-controller="ArticleController as blog">
+	<nav>
+		<button id="newPost" class="btn btn-primary btn-block">
+			New Post
+		</button>
+	</nav>
 
-	<article ng-repeat="article in blog.articles">
-		<img class="img" src="ui/pic/{{article.pic}}.jpg" alt />
+	<div class="content">
+		<article ng-repeat="article in blog.articles">
+			<img class="img" ng-src="ui/pic/{{article.pic}}.jpg" alt />
 
-		<h2 class="title">{{article.title}}</h2>
+			<h2 class="title">{{article.title}}</h2>
 
-		<h4 class="author">{{article.author}}</h4>
+			<h4 class="author">{{article.author}}</h4>
 
-		<p class="article">{{article.text}}</p>
-	</article>
+			<p class="article">{{article.text}}</p>
+		</article>
+	</div>
 
+	<!-- Modal -->
+	<div id="formNewPost" class="modal">
+		<form>
+			<label>Author:</label>
+			<input type="text" placeholder="Author "/>
+		</form>
+	</div>
 </div>
 
 </body>
