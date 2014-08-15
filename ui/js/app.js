@@ -5,49 +5,36 @@
 		this.articles = articles;
 	});
 
+	app.controller('NewFormController', function(){
+		this.article = {};
+		this.submit = function(){
+			this.article.date = Date.now();
+			articles.push(this.article);
+			$('#modalNewPost').modal('hide');
+			console.log(this.article);
+			console.log(articles);
+			this.article = {};
+		};
+	});
+
 	var articles = [
 		{
-			pic: "01",
+			pic: "01.jpg",
 			title: "Title 1",
 			author: "Author 1",
 			text: "111111 teeeeext tx ttteeeext textttt teeeeext tx ttteeeext textttt teeeeext tx ttteeeext textttt teeeeext tx ttteeeext"
 		},
 		{
-			pic: "02",
+			pic: "02.jpg",
 			title: "Title 2",
 			author: "Author 2",
 			text: "22222 tx ttteeeext textttt teeeeext tx ttteeeext textttt teeeeext tx ttteeeext textttt teeeeext tx ttteeeext"
 		},
 		{
-			pic: "03",
+			pic: "03.jpg",
 			title: "Title 3",
 			author: "Author 3",
 			text: "333333 tttttxxxtt teeeeext tx ttteeeext textttt teeeeext tx ttteeeext textttt teeeeext tx ttteeeext textttt teeeeext tx ttteeeext"
 		}
 	];
 })();
-
-$(document).ready(function(){
-	$("#newPost").click(function(){
-		bootbox.dialog({
-			message: $("#formNewPost").html(),
-			title: "New post",
-			buttons: {
-				cancel: {
-					label: "Cancel",
-					className: "btn-default",
-					callback: function() {
-						bootbox.hideAll();
-					}
-				},
-				add: {
-					label: "Add this new post",
-					className: "btn-primary",
-					callback: function() {
-						alert("great success");
-					}
-				}
-			}
-		});
-	});
-});

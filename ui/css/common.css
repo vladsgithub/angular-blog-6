@@ -13,8 +13,30 @@ nav {
 .content {
 	padding: 20px 0;
 }
+.content article {
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #6699cc;
+	border-radius: 10px;
+}
+article img {
+	max-width: 100%;
+}
 nav .btn {
 	border-color: #fff;
+}
+fieldset .ng-dirty {
+	/*background-image: linear-gradient(180deg, rgba(0,0,0,1) -100%, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 66%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 200%);*/
+}
+fieldset .ng-valid.ng-dirty {
+	background-color: #E6FFDB;
+}
+fieldset .ng-invalid.ng-dirty {
+	background-color: #FFDBDB;
+}
+.animation {
+	background-position: 0 -40px;
+	transition: 0.4s;
 }
 .btn {
 	position: relative;
@@ -38,7 +60,4 @@ nav .btn {
 	top: -1px;
 	background-position: 0 -20px;
 	outline: none;
-}
-form input {
-	width: 100%;
 }
