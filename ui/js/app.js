@@ -11,9 +11,8 @@
 			this.article.date = Date.now();
 			articles.push(this.article);
 			$('#modalNewPost').modal('hide');
-			console.log(this.article);
-			console.log(articles);
 			this.article = {};
+			$scope.formNewPost.$setPristine();
 		};
 	});
 
