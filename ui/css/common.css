@@ -20,6 +20,8 @@ nav {
 	border-radius: 10px;
 }
 article img {
+	display: block;
+	margin: auto;
 	max-width: 100%;
 }
 nav .btn {

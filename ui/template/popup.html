@@ -1,0 +1,32 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h4 class="modal-title">New post</h4>
+		</div>
+		<div class="modal-body">
+
+			<form name="formNewPost" ng-submit="formNewPost.$valid && newForm.submit()" novalidate>
+				<fieldset class="form-group">
+					<input class="form-control animation" type="text" ng-model="newForm.article.author" placeholder="Write author's name..." required />
+				</fieldset>
+				<fieldset class="form-group">
+					<select class="form-control animation" ng-model="newForm.article.pic" ng-options="pic for pic in ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg']">
+						<option value="">Choose a picture</option>
+					</select>
+				</fieldset>
+				<fieldset class="form-group">
+					<input class="form-control animation" type="text" ng-model="newForm.article.title" placeholder="Write a title..." required />
+				</fieldset>
+				<fieldset class="form-group">
+					<textarea class="form-control animation" ng-model="newForm.article.text" placeholder="Write post's text..." required></textarea>
+				</fieldset>
+				<fieldset class="form-group">
+					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-success pull-right">Submit</button>
+				</fieldset>
+			</form>
+
+		</div>
+	</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

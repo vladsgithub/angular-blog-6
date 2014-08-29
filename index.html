@@ -2,7 +2,7 @@
 <html ng-app="angularApp">
 <head>
 	<meta charset="utf-8">
-	<title>Angular-blog</title>
+	<title>Angular-blog-3</title>
 
 	<link rel="stylesheet" href="ui/css/bootstrap.min.css">
 	<link rel="stylesheet" href="ui/css/common.css">
@@ -20,58 +20,14 @@
 </header>
 <div class="container" ng-controller="ArticleController as blog">
 	<nav>
-		<button data-toggle="modal" data-target="#modalNewPost" class="btn btn-primary btn-block">
+		<button data-toggle="modal" data-target="popup" class="btn btn-primary btn-block">
 			New Post
 		</button>
 	</nav>
 
-	<div class="content">
-		<article ng-repeat="article in blog.articles">
-			<img class="img" ng-src="ui/pic/{{article.pic}}" ng-show="article.pic" alt />
+	<div blog-post class="content"></div>
 
-			<h2 class="title">{{article.title}}</h2>
-
-			<h4 class="author">{{article.author}} <span ng-show="article.date">- {{article.date | date}}</span></h4>
-
-			<p class="article">{{article.text}}</p>
-		</article>
-	</div>
-
-	<!-- Modal -->
-	<div id="modalNewPost" class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title">New post</h4>
-				</div>
-				<div class="modal-body">
-
-					<form name="formNewPost" ng-controller="NewFormController as newForm" ng-submit="formNewPost.$valid && newForm.submit()" novalidate>
-						<fieldset class="form-group">
-							<input class="form-control animation" type="text" ng-model="newForm.article.author" placeholder="Write author's name..." required />
-						</fieldset>
-						<fieldset class="form-group">
-							<select class="form-control animation" ng-model="newForm.article.pic" ng-options="pic for pic in ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg']">
-								<option value="">Choose a picture</option>
-							</select>
-						</fieldset>
-						<fieldset class="form-group">
-							<input class="form-control animation" type="text" ng-model="newForm.article.title" placeholder="Write a title..." required />
-						</fieldset>
-						<fieldset class="form-group">
-							<textarea class="form-control animation" ng-model="newForm.article.text" placeholder="Write post's text..." required></textarea>
-						</fieldset>
-						<fieldset class="form-group">
-							<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-success pull-right">Submit</button>
-						</fieldset>
-					</form>
-
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+	<popup class="modal fade"></popup>
 </div>
 
 </body>

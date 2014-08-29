@@ -1,18 +1,35 @@
 (function() {
-	var app = angular.module('angularApp', []);
+	var app = angular.module('angularApp', []),
+		scopeArticleController;
 
-	app.controller('ArticleController', function(){
+	app.controller('ArticleController', function($scope){
+		scopeArticleController = $scope;
 		this.articles = articles;
 	});
 
-	app.controller('NewFormController', function(){
-		this.article = {};
-		this.submit = function(){
-			this.article.date = Date.now();
-			articles.push(this.article);
-			$('#modalNewPost').modal('hide');
-			this.article = {};
-			$scope.formNewPost.$setPristine();
+	app.directive("blogPost", function(){
+		return {
+			restrict: 'A',
+			templateUrl: 'ui/template/blog-post.html'
+		};
+	});
+
+	app.directive("popup", function(){
+
+		return {
+			restrict: 'E',
+			templateUrl: 'ui/template/popup.html',
+			controller: function(){
+				this.article = {};
+				this.submit = function($scope){
+					this.article.date = Date.now();
+					articles.push(this.article);
+					$('popup').modal('hide');
+					this.article = {};
+					scopeArticleController.formNewPost.$setPristine();
+				};
+			},
+			controllerAs: 'newForm'
 		};
 	});
 

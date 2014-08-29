@@ -1,0 +1,9 @@
+<article ng-repeat="article in blog.articles">
+	<img class="img" ng-src="ui/pic/{{article.pic}}" ng-show="article.pic" alt />
+
+	<h2 class="title">{{article.title}}</h2>
+
+	<h4 class="author">{{article.author}} <span ng-show="article.date">- {{article.date | date}}</span></h4>
+
+	<p class="article">{{article.text}}</p>
+</article>
