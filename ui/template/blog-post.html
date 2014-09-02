@@ -1,9 +1,10 @@
 <article ng-repeat="article in blog.articles">
-	<img class="img" ng-src="ui/pic/{{article.pic}}" ng-show="article.pic" alt />
+	<img class="img" ng-src="{{article.image}}" ng-show="article.image" alt />
 
 	<h2 class="title">{{article.title}}</h2>
 
 	<h4 class="author">{{article.author}} <span ng-show="article.date">- {{article.date | date}}</span></h4>
 
-	<p class="article">{{article.text}}</p>
+	<p class="article" ng-show="article.text">{{article.text}}</p>
+	<p class="article" ng-show="article.body">{{article.body}}</p>
 </article>
