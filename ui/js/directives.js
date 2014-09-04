@@ -4,23 +4,27 @@
 	app.directive("blogPost", function(){
 		return {
 			restrict: 'A',
-			templateUrl: 'ui/template/blog-post.html'
+			templateUrl: 'ui/views/blog-post.html'
 		};
 	});
 
 	app.directive("popup", function(){
-
 		return {
 			restrict: 'E',
-			templateUrl: 'ui/template/popup.html',
-			controller: function(){
+			templateUrl: 'ui/views/popup.html',
+			controller: function($scope){
+				//console.log($scope.newForm);
 				this.article = {};
-				this.submit = function($scope){
+
+
+				this.submit = function(){
 					this.article.date = Date.now();
-					articles.push(this.article);
+
+					$scope.blog.addArticle(this.article);
+
 					$('popup').modal('hide');
 					this.article = {};
-					scopeArticleController.formNewPost.$setPristine();
+					$scope.formNewPost.$setPristine();
 				};
 			},
 			controllerAs: 'newForm'

@@ -7,4 +7,9 @@
 
 	<p class="article" ng-show="article.text">{{article.text}}</p>
 	<p class="article" ng-show="article.body">{{article.body}}</p>
+
+	<div class="clearfix text-right">
+		<button class="btn btn-warning" data-toggle="modal" data-target="popup" ng-click="blog.editArticle(article)">Edit</button>
+		<button class="btn btn-danger" ng-click="blog.deleteArticle(article._id)">Delete</button>
+	</div>
 </article>

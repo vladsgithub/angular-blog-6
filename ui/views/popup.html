@@ -11,15 +11,13 @@
 					<input class="form-control animation" type="text" ng-model="newForm.article.author" placeholder="Write author's name..." required />
 				</fieldset>
 				<fieldset class="form-group">
-					<select class="form-control animation" ng-model="newForm.article.pic" ng-options="pic for pic in ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg']">
-						<option value="">Choose a picture</option>
-					</select>
+					<input class="form-control animation" type="text" ng-model="newForm.article.image" placeholder="Add URL of the image..." />
 				</fieldset>
 				<fieldset class="form-group">
 					<input class="form-control animation" type="text" ng-model="newForm.article.title" placeholder="Write a title..." required />
 				</fieldset>
 				<fieldset class="form-group">
-					<textarea class="form-control animation" ng-model="newForm.article.text" placeholder="Write post's text..." required></textarea>
+					<textarea class="form-control animation" ng-model="newForm.article.body" placeholder="Write post's text..." required></textarea>
 				</fieldset>
 				<fieldset class="form-group">
 					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
