@@ -13,18 +13,17 @@
 			restrict: 'E',
 			templateUrl: 'ui/views/popup.html',
 			controller: function($scope){
-				//console.log($scope.newForm);
 				this.article = {};
-
 
 				this.submit = function(){
 					this.article.date = Date.now();
 
-					$scope.blog.addArticle(this.article);
+					if(this.forEditing)
+						$scope.blog.editArticle(this.article._id, this.article);
+					else
+						$scope.blog.addArticle(this.article);
 
 					$('popup').modal('hide');
-					this.article = {};
-					$scope.formNewPost.$setPristine();
 				};
 			},
 			controllerAs: 'newForm'
