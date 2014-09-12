@@ -2,7 +2,7 @@
 <html ng-app="angularApp">
 <head>
 	<meta charset="utf-8">
-	<title>Angular-blog-4</title>
+	<title>Angular-blog-5</title>
 
 	<link rel="stylesheet" href="ui/css/bootstrap.min.css">
 	<link rel="stylesheet" href="ui/css/common.css">
@@ -10,14 +10,19 @@
 	<script src="ui/js/jquery-2.1.0.min.js"></script>
 	<script src="ui/js/bootstrap.min.js"></script>
 	<script src="ui/js/angular.min.js"></script>
-	<script src="ui/js/app.js"></script>
-	<script src="ui/js/directives.js"></script>
+	<script src="ui/js/angular-route.min.js"></script>
+	<script src="ui/js/scripts/app.js"></script>
+	<script src="ui/js/scripts/controllers/article.js"></script>
+	<script src="ui/js/scripts/controllers/post.js"></script>
+	<script src="ui/js/scripts/directives/directives.js"></script>
 
 </head>
 <body ng-cloak>
 
 <header>
-	<img src="ui/img/logo.png" alt />
+	<a href="#" title="Go to posts">
+		<img src="ui/img/logo.png" alt />
+	</a>
 </header>
 <div class="container" ng-controller="ArticleController as blog">
 	<nav>
@@ -26,7 +31,7 @@
 		</button>
 	</nav>
 
-	<div blog-post class="content"></div>
+	<ng-view class="content"></ng-view>
 
 	<popup class="modal fade"></popup>
 </div>

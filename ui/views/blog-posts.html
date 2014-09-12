@@ -1,0 +1,16 @@
+<article ng-repeat="article in blog.articles" >
+	<img class="img" ng-src="{{article.image}}" ng-show="article.image" alt />
+
+	<h2 class="title">{{article.title}}</h2>
+
+	<h4 class="author">{{article.author}} <span ng-show="article.date">- {{article.date | date}}</span></h4>
+
+	<p class="article" ng-show="article.text">{{article.text}}</p>
+	<p class="article" ng-show="article.body">{{article.body}}</p>
+
+	<div class="button-block text-right">
+		<a href="#/post/{{article._id}}" class="btn btn-info pull-left">More</a>
+		<button class="btn btn-warning" data-toggle="modal" data-target="popup" ng-click="blog.fillPopup(article)">Edit</button>
+		<button class="btn btn-danger" ng-click="blog.deleteArticle(article._id)">Delete</button>
+	</div>
+</article>

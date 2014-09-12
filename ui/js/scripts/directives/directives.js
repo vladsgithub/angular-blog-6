@@ -1,12 +1,7 @@
+'use strict';
+
 (function() {
 	var app = angular.module('directives', []);
-
-	app.directive("blogPost", function(){
-		return {
-			restrict: 'A',
-			templateUrl: 'ui/views/blog-post.html'
-		};
-	});
 
 	app.directive("popup", function(){
 		return {
